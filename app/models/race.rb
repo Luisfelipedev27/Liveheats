@@ -5,6 +5,8 @@ class Race < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validate :minimum_two_students
 
+  accepts_nested_attributes_for :lanes
+
   private
 
   def minimum_two_students

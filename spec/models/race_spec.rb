@@ -4,6 +4,7 @@ RSpec.describe Race, type: :model do
   describe 'associations' do
     it { is_expected.to have_many(:lanes).dependent(:destroy) }
     it { is_expected.to have_many(:students).through(:lanes) }
+    it { is_expected.to accept_nested_attributes_for(:lanes) }
   end
 
   describe 'validations' do
