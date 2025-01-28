@@ -45,6 +45,9 @@ group :development, :test do
   # https://github.com/thoughtbot/shoulda-matchers
   gem 'shoulda-matchers'
 
+  # https://github.com/thoughtbot/factory_bot_rails
+  gem 'factory_bot_rails'
+
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
