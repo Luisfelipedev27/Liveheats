@@ -17,6 +17,16 @@ module Api
         end
       end
 
+      def show
+        service = Api::V1::Races::Finder.call(race_id: params[:id])
+
+        if service.success?
+          render json: service.race, status: :ok
+        else
+          render json: service.error_message, status: :not_found
+        end
+      end
+      
       private
 
       def race_params
