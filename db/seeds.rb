@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+students = [
+  { name: "Luis Felipe" },
+  { name: "John Doe" },
+  { name: "Alice Johnson" }
+]
+
+students.each do |student_attributes|
+  Student.find_or_create_by!(student_attributes)
+end
