@@ -3,4 +3,11 @@ class Race < ApplicationRecord
   has_many :students, through: :lanes
 
   validates :name, presence: true, uniqueness: true
+  validate :minimum_two_students
+
+  private
+
+  def minimum_two_students
+    errors.add(:base, "A race must have at least two students") if lanes.size < 2
+  end
 end
