@@ -8,6 +8,8 @@ Rails.application.routes.draw do
           post :results
         end
       end
+
+      resources :students, only: :index
     end
   end
 end
