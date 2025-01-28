@@ -39,7 +39,11 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
+  # See https://github.com/rspec/rspec-rails
   gem 'rspec-rails'
+
+  # https://github.com/thoughtbot/shoulda-matchers
+  gem 'shoulda-matchers'
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
