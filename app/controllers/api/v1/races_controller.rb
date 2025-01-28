@@ -26,11 +26,25 @@ module Api
           render json: service.error_message, status: :not_found
         end
       end
-      
+
+      def results
+        service = Api::V1::Races::Results::Finder.call(race_id: params[:id], result_params: result_params)
+
+        if service.success?
+          render json: service.results, status: :ok
+        else
+          render json: service.error_message, status: :not_found
+        end
+      end
+
       private
 
       def race_params
         params.require(:race).permit(:name, lanes_attributes: [:student_id])
+      end
+
+      def result_params
+        params.permit(results: [:student_id, :position])
       end
     end
   end
