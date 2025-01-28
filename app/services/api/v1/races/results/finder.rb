@@ -28,12 +28,12 @@ module Api
             self.results = ActiveRecord::Base.transaction do
               result_params[:results].each do |result|
                 lane = race.lanes.find_by(student_id: result[:student_id])
-                lane.update(position: result[:position])
+                lane.update!(position: result[:position])
               end
             end
 
             true
-          rescue ActiveRecord::RecordNotFound
+          rescue ActiveRecord::RecordNotFound, ActiveRecord::RecordInvalid
             self.error_message = 'error on update race'
 
             false
