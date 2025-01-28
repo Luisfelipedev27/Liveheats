@@ -4,7 +4,7 @@ RSpec.describe Api::V1::Races::Finder do
   describe "#call" do
     context "when finding a race" do
       it "finds a race" do
-        race = create(:race, students: [create(:student), create(:student)])
+        race = create(:race, students: [ create(:student), create(:student) ])
 
         service = described_class.call(race_id: race.id)
 
