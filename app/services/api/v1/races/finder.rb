@@ -27,7 +27,7 @@ module Api
 
           true
         rescue ActiveRecord::RecordNotFound
-          self.error_message = 'error on find race'
+          self.error_message = "error on find race"
 
           false
         end

@@ -21,7 +21,7 @@ module Api
 
           return true if race.save
 
-          self.error_message = 'error on create race'
+          self.error_message = "error on create race"
         end
       end
     end

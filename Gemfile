@@ -40,13 +40,13 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
   # See https://github.com/rspec/rspec-rails
-  gem 'rspec-rails'
+  gem "rspec-rails"
 
   # https://github.com/thoughtbot/shoulda-matchers
-  gem 'shoulda-matchers'
+  gem "shoulda-matchers"
 
   # https://github.com/thoughtbot/factory_bot_rails
-  gem 'factory_bot_rails'
+  gem "factory_bot_rails"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false

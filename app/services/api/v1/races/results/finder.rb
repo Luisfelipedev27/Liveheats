@@ -34,7 +34,7 @@ module Api
 
             true
           rescue ActiveRecord::RecordNotFound, ActiveRecord::RecordInvalid
-            self.error_message = 'error on update race'
+            self.error_message = "error on update race"
 
             false
           end

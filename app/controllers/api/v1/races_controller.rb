@@ -40,11 +40,11 @@ module Api
       private
 
       def race_params
-        params.require(:race).permit(:name, lanes_attributes: [:student_id])
+        params.require(:race).permit(:name, lanes_attributes: [ :student_id ])
       end
 
       def result_params
-        params.permit(results: [:student_id, :position])
+        params.permit(results: [ :student_id, :position ])
       end
     end
   end
