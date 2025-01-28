@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :lane do
-    race { nil }
-    student { nil }
+    association :race
+    association :student
     position { 1 }
   end
 end
