@@ -1,6 +1,12 @@
 module Api
   module V1
     class RacesController < ApplicationController
+      def index
+        races = Race.all
+
+        render json: races, status: :ok
+      end
+
       def create
         service = Api::V1::Races::Creator.call(race_params: race_params)
 

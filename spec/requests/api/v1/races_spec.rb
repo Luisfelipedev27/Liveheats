@@ -20,4 +20,27 @@ RSpec.describe 'api/v1/races', type: :request do
       end
     end
   end
+
+  describe 'GET /' do
+    context 'when there are races' do
+      it 'returns all races' do
+        create(:race, students: [create(:student), create(:student)])
+
+        get '/api/v1/races'
+
+        expect(response).to have_http_status(:ok)
+      end
+    end
+
+    context 'when there are no races' do
+      it 'returns an empty array' do
+        Race.destroy_all
+
+        get '/api/v1/races'
+
+        expect(response).to have_http_status(:ok)
+        expect(response.body).to eq('[]')
+      end
+    end
+  end
 end
